@@ -1,0 +1,24 @@
+
+GIS
+Question No. 3
+bagian kode yang diubah adalah 'mapTypeId' yang secara default adalah mapTypeId:google.maps.MapTypeId.ROADMAP, maka untuk type nya kita ganti dengan 
+map type OSM. disitulah inti dari penggunaan map OSM.
+cara pembuatannya yaitu seperti contoh dibawah,
+saya buat fungsi setOsama(), di dalam fungsi tersebut terdapat contoh pengaturan map OSM
+
+function setOsama(map){
+	//Defining OSM Map Type
+	var osmMapType = new google.maps.ImageMapType({
+         	getTileUrl: function(coord, zoom) {
+        			return "http://tile.openstreetmap.org/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
+    		},
+    		tileSize: new google.maps.Size(256, 256),
+    		name: "OpenStreetMap",
+    		maxZoom: 18
+		});
+		//relate new mapTypeId to the ImageMapType - osmMapType object
+	map.mapTypes.set('OSM', osmMapType);
+	
+	//set this new mapTypeId to be displayed
+	map.setMapTypeId('OSM');
+}
