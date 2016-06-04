@@ -1,2 +1,3 @@
 # gis
-Rework Mid Exam GIS UMS
+tugas 2 dan 3
+#tugas 1 ada di repositori lain
